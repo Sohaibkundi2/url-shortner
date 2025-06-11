@@ -100,7 +100,7 @@ const handleLogout = async () => {
       {mobileMenuOpen && (
         <div className="md:hidden px-4 pt-2 pb-3 space-y-1 bg-white border-t border-gray-100">
           {['/', '/dashboard', '/about'].map((path, i) => {
-            const labels = ['Home', 'Dashboard', 'About'];
+            const labels = ['Home', 'History', 'About'];
             return (
               <Link
                 key={path}

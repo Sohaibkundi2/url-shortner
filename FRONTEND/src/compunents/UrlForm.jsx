@@ -46,10 +46,6 @@ const UrlForm = () => {
   const submitHandler = (e) => {
     e.preventDefault();
     setErrorMsg("");
-      if (!auth.isAuthenticated) {
-    setErrorMsg("You must be logged in to create a short URL.");
-    return;
-  }
     mutation.mutate({ url: urlVal, slug });
   };
 

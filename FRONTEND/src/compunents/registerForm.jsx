@@ -75,7 +75,7 @@ const RegisterForm = ({ state }) => {
             id="username"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
-            placeholder="Sohaib"
+            placeholder="your_name"
             required
             className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
