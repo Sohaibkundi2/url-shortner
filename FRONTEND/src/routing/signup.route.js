@@ -1,6 +1,6 @@
 import { createRoute } from '@tanstack/react-router'
 import signupPage from '../pages/signupPage'
-import { rootRoute } from './routeTree'
+import { rootRoute } from './routeTree.js'
 
 
 
