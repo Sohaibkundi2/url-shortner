@@ -115,11 +115,8 @@ const handleLogout = async () => {
           <div className="pt-4 border-t border-gray-200">
             {isAuthenticated ? (
               <div className="flex items-center space-x-4 px-3">
-                <div className="h-10 w-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 font-semibold">
-                  {user?.username?.charAt(0) || 'U'}
-                </div>
                 <div className="flex flex-col">
-                  <span className="text-base font-medium text-gray-800">{user?.username || 'User'}</span>
+                  <span className="text-base font-medium text-gray-800">{user?.name || 'User'}</span>
                   <button
                     onClick={handleLogout}
                     className="text-sm text-blue-600 cursor-pointer hover:text-blue-800"

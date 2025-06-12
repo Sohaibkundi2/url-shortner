@@ -5,7 +5,7 @@ import { createShortUrl } from "../api/createShortUrl";
 import { motion, AnimatePresence } from "framer-motion";
 
 
-const BASE_URL = import.meta.env.VITE_API_BASE_URL;
+const BASE_URL = "api.shrtit.tech";
 
 const UrlForm = () => {
   const [urlVal, setUrlVal] = useState("");

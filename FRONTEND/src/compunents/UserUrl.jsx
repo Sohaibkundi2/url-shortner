@@ -4,7 +4,7 @@ import { getAllUserUrls } from '../api/user.api';
 import { motion } from 'framer-motion';
 
 const UserUrl = () => {
-  const BASE_URL =import.meta.env.VITE_API_BASE_URL;;
+const BASE_URL = "api.shrtit.tech";
   const { data, isLoading, isError } = useQuery({
     queryKey: ['userUrls'],
     queryFn: getAllUserUrls,

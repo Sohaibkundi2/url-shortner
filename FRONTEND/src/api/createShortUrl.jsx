@@ -2,10 +2,10 @@ import { axiosInstance } from "../utils/axiosInstance";
 
 export const createShortUrl = async (url, slug = "") => {
   try {
-    const res = await axiosInstance.post("/api/create", { url, slug });
-    return res.data.data;
+    const response = await axiosInstance.post("/api/create", { url, slug });
+    return response.data?.data;
   } catch (err) {
-    console.log("❌ Axios Error Response:", err.response?.data); // ADD THIS
+    console.error("❌ Axios Error Response:", err);
 
     const message =
       err.response?.data?.error ||
@@ -15,5 +15,4 @@ export const createShortUrl = async (url, slug = "") => {
 
     throw new Error(message);
   }
-
 };

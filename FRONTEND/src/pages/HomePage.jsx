@@ -11,7 +11,7 @@ const HomePage = () => {
   const { isAuthenticated } = useSelector((state) => state.auth);
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-blue-100 to-white flex flex-col items-center justify-start px-4 overflow-hidden text-center relative">
+    <div className="min-h-screen bg-gradient-to-b from-blue-100 to-yellow-50 flex flex-col items-center justify-start px-4 overflow-hidden text-center relative">
       <AboutHeader />
 
       {/* Micro Interactions */}
