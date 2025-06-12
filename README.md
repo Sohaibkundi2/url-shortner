@@ -1,84 +1,85 @@
 # 🔗 URL Shortener
 
-A simple full-stack URL shortener application built with React (frontend) and Node.js/Express (backend). Users can create short URLs, view their created links, and track click counts.
+A modern full-stack URL shortener built with **React** and **Node.js/Express**. Users can create custom short URLs, track visits, and manage their links in a clean UI.
 
 ---
 
-## Features
+## 🚀 Live Demo
 
-- **Create Short URLs:** Enter a long URL and get a short, shareable link.
-- **User Dashboard:** View all your created URLs in a table.
-- **Copy to Clipboard:** Easily copy short URLs with one click.
-- **Click Tracking:** See how many times each short URL has been visited.
-- **Animated UI:** Smooth transitions using Framer Motion.
-- **No Page Refresh Needed:** URLs and click counts update automatically.
+- 🔗 Frontend: [https://shrtit.tech](https://shrtit.tech)
+- ⚙️ Backend/API: [https://api.shrtit.tech](https://api.shrtit.tech)
 
 ---
 
-## Tech Stack
+## ✨ Features
 
-- **Frontend:** React, Tailwind CSS, Framer Motion, React Query
-- **Backend:** Node.js, Express, MongoDB 
-- **Clipboard API:** For copying URLs
+- 🔗 **Shorten URLs** — with optional custom slugs
+- 🧑‍💼 **User Dashboard** — view and manage your links
+- 📈 **Click Tracking** — see visit counts in real-time
+- 📋 **Copy to Clipboard** — one-click short link copying
+- 💨 **Framer Motion Animations**
+- ⚡ **No Refresh Needed** — powered by TanStack React Query
 
 ---
 
-## Getting Started
+## 🛠 Tech Stack
+
+- **Frontend**: React, Tailwind CSS, Framer Motion, React Query (TanStack)
+- **Backend**: Node.js, Express, MongoDB
+- **API**: RESTful with secure cookie-based auth
+- **Deployment**: Vercel (Frontend), Railway (Backend)
+
+---
+
+## 🧑‍💻 Getting Started (Locally)
 
 ### Prerequisites
 
-- Node.js and npm installed
-- MongoDB running 
+- Node.js and npm
+- MongoDB running locally or via MongoDB Atlas
 
-### Clone the Repository
+### 1. Clone Repository
 
 ```bash
 git clone https://github.com/sohaibkundi2/url-shortener.git
 cd url-shortener
 ```
 
-### Backend Setup
+## 2. Backend Setup
+```
+cd backend
+npm install
+```
+- Create a .env file:
+```
+PORT=3000
+MONGODB_URI=your_mongo_connection
+JWT_SECRET=your_secret
+CLIENT_URL=http://localhost:3000
+```
+```
+npm run dev
+```
+- The backend runs at http://localhost:3000
 
-1. Go to the backend folder:
-    ```bash
-    cd BACKEND
-    ```
-2. Install dependencies:
-    ```bash
-    npm install
-    ```
-3. Create a `.env` file and set your MongoDB URI and other configs.
-4. Start the backend server:
-    ```bash
-    npm start
-    ```
-    The backend will run on `http://localhost:5000/` by default.
-
-### Frontend Setup
-
-1. Open a new terminal and go to the frontend folder:
-    ```bash
-    cd FRONTEND
-    ```
-2. Install dependencies:
-    ```bash
-    npm install
-    ```
-3. Start the frontend:
-    ```bash
-    npm start
-    ```
-    The frontend will run on `http://localhost:3000/` by default.
-
+## 3. Frontend Setup
+```
+cd ../frontend
+npm install
+npm run dev
+```
+- The frontend runs at http://localhost:5173
 ---
 
-## Usage
+# 🧪 Usage
+- Visit your deployed site shrtit.tech
 
-- Open [http://localhost:3000/](http://localhost:3000/) in your browser.
-- Enter a long URL to generate a short link.
-- View, copy, and track your URLs in the dashboard.
+- Log in or sign up to create custom links
 
----
+- Copy and share the generated short URLs
+
+- Dashboard auto-updates click counts using React Query
+
 
 ## Project Structure
 
@@ -94,32 +95,48 @@ url-shortener/
 │   │   ├── components/
 │   │   └── App.jsx
 │   └── index.html
+│   └── vite.config.js
 ├── README.md
 └── .gitignore
 
 ```
 
 ---
+# 🌐 Vercel Configuration
 
-## Customization
+Vercel handles client-side routing by using this config in vercel.json (already included if deployed correctly):
 
-- **API Base URL:** Update the `BASE_URL` in your frontend code if your backend runs on a different port or domain.
-- **Styling:** Uses Tailwind CSS for easy customization.
+```json
+{
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/" }
+  ]
+}
+```
+- This ensures routes like /auth or /dashboard don’t give a 404 on refresh.
 
 ---
+## 🔐 Authentication
+- Login/signup system with JWT (stored in HttpOnly cookies)
 
-## License
+- Protected routes handled on frontend and backend
 
-This project is for learning and demonstration purposes.
+## 📝 License
 
+- This project is for educational and demonstration purposes only.
 ---
 
-## Credits
+## 🙌 Credits
 
 - [React](https://react.dev/)
 - [Express](https://expressjs.com/)
 - [MongoDB](https://www.mongodb.com/)
 - [Framer Motion](https://www.framer.com/motion/)
-- [React Query](https://tanstack.com/query/latest)
-
+- [TanStack Query](https://tanstack.com/query/latest)
 ---
+
+
+## 👤 Author
+```
+Made with 💻 by Sohaib Kundi.
+```

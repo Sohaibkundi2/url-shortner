@@ -1,5 +1,18 @@
 {
   "rewrites": [
-    { "source": "/(.*)", "destination": "/index.html" }
+    {
+      "source": "/:slug",            
+      "has": [
+        {
+          "type": "host",
+          "value": "shrtit.tech"
+        }
+      ],
+      "destination": "https://api.shrtit.tech/:slug"
+    },
+    {
+      "source": "/(.*)",               
+      "destination": "/index.html"
+    }
   ]
 }
