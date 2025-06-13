@@ -1,17 +1,21 @@
 {
   "rewrites": [
     {
-      "source": "/:slug",            
+      "source": "/:slug",
       "has": [
         {
-          "type": "host",
-          "value": "shrtit.tech"
+          "type": "header",
+          "key": "x-vercel-ip-country" 
         }
       ],
       "destination": "https://api.shrtit.tech/:slug"
     },
     {
-      "source": "/(.*)",               
+      "source": "/api/(.*)",
+      "destination": "https://api.shrtit.tech/api/$1"
+    },
+    {
+      "source": "/(.*)",
       "destination": "/index.html"
     }
   ]
