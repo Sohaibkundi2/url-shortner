@@ -4,7 +4,7 @@ import { getAllUserUrls } from '../api/user.api';
 import { motion } from 'framer-motion';
 
 const UserUrl = () => {
-const BASE_URL = "api.shrtit.tech";
+const BASE_URL = "shrtit.tech/";
   const { data, isLoading, isError } = useQuery({
     queryKey: ['userUrls'],
     queryFn: getAllUserUrls,
