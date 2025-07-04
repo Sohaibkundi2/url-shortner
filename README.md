@@ -1,44 +1,47 @@
-# 🔗 URL Shortener
+# URL Shortener
+
+![Version](https://img.shields.io/badge/version-1.1.0-blue?style=flat-square)
 
 A modern full-stack URL shortener built with **React** and **Node.js/Express**. Users can create custom short URLs, track visits, and manage their links in a clean UI.
 
 ---
 
-## 🚀 Live Demo
+## Live Demo
 
-- 🔗 Frontend: [https://shrtit.tech](https://shrtit.tech)
-- ⚙️ Backend/API: [https://api.shrtit.tech](https://api.shrtit.tech)
-
----
-
-## ✨ Features
-
-- 🔗 **Shorten URLs** — with optional custom slugs
-- 🧑‍💼 **User Dashboard** — view and manage your links
-- 📈 **Click Tracking** — see visit counts in real-time
-- 📋 **Copy to Clipboard** — one-click short link copying
-- 💨 **Framer Motion Animations**
-- ⚡ **No Refresh Needed** — powered by TanStack React Query
+- Frontend: [https://shrtit.tech](https://shrtit.tech)
+- Backend/API: [https://api.shrtit.tech](https://api.shrtit.tech)
 
 ---
 
-## 🛠 Tech Stack
+## Features
 
-- **Frontend**: React, Tailwind CSS, Framer Motion, React Query (TanStack)
+- Shorten URLs with optional custom slugs
+- User dashboard to manage links
+- Click tracking with live stats
+- One-click copy to clipboard
+- Smooth UI animations with Framer Motion
+- Data fetching and syncing using TanStack React Query
+
+---
+
+## Tech Stack
+
+- **Frontend**: React, Tailwind CSS, Framer Motion, React Query
 - **Backend**: Node.js, Express, MongoDB
-- **API**: RESTful with secure cookie-based auth
+- **API**: RESTful with cookie-based authentication
 - **Deployment**: Vercel (Frontend), Railway (Backend)
 
 ---
 
-## 🧑‍💻 Getting Started (Locally)
+## Getting Started (Locally)
 
 ### Prerequisites
 
 - Node.js and npm
-- MongoDB running locally or via MongoDB Atlas
+- MongoDB (local or MongoDB Atlas)
 
 ### 1. Clone Repository
+
 
 ```bash
 git clone https://github.com/sohaibkundi2/url-shortener.git
@@ -71,7 +74,7 @@ npm run dev
 - The frontend runs at http://localhost:5173
 ---
 
-# 🧪 Usage
+#  Usage
 - Visit your deployed site shrtit.tech
 
 - Log in or sign up to create custom links
@@ -102,7 +105,7 @@ url-shortener/
 ```
 
 ---
-# 🌐 Vercel Configuration
+#  Vercel Configuration
 
 Vercel handles client-side routing by using this config in vercel.json (already included if deployed correctly):
 
@@ -116,17 +119,17 @@ Vercel handles client-side routing by using this config in vercel.json (already 
 - This ensures routes like /auth or /dashboard don’t give a 404 on refresh.
 
 ---
-## 🔐 Authentication
+##  Authentication
 - Login/signup system with JWT (stored in HttpOnly cookies)
 
 - Protected routes handled on frontend and backend
 
-## 📝 License
+##  License
 
 - This project is for educational and demonstration purposes only.
 ---
 
-## 🙌 Credits
+##  Credits
 
 - [React](https://react.dev/)
 - [Express](https://expressjs.com/)
@@ -136,7 +139,7 @@ Vercel handles client-side routing by using this config in vercel.json (already 
 ---
 
 
-## 👤 Author
+##  Author
 ```
 Made with 💻 by Sohaib Kundi.
 ```

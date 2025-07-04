@@ -12,6 +12,14 @@ const HomePage = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-100 to-yellow-50 flex flex-col items-center justify-start px-4 overflow-hidden text-center relative">
+
+      <motion.div
+  initial={{ scale: 0.9, opacity: 0.4 }}
+  animate={{ scale: 1.05, opacity: 0.6 }}
+  transition={{ repeat: Infinity, repeatType: "reverse", duration: 6 }}
+  className="absolute -top-24 left-1/2 -translate-x-1/2 w-[400px] h-[400px] bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-purple-300 via-pink-200 to-orange-100 rounded-full blur-3xl opacity-60 z-0"
+/>
+
       <AboutHeader />
 
       {/* Micro Interactions */}
