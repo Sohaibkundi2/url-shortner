@@ -10,6 +10,7 @@ const features = [
     border: "border-blue-600",
     shadow: "shadow-blue-400/50",
     bgCircle: "bg-blue-100",
+    ring: "ring-blue-300",
   },
   {
     icon: <FaChartLine className="text-green-600 text-xl" />,
@@ -18,6 +19,7 @@ const features = [
     border: "border-green-600",
     shadow: "shadow-green-400/50",
     bgCircle: "bg-green-100",
+    ring: "ring-green-300",
   },
   {
     icon: <FaShieldAlt className="text-purple-600 text-xl" />,
@@ -26,6 +28,7 @@ const features = [
     border: "border-purple-600",
     shadow: "shadow-purple-400/50",
     bgCircle: "bg-purple-100",
+    ring: "ring-purple-300",
   },
   {
     icon: <FaRocket className="text-red-500 text-xl" />,
@@ -34,13 +37,17 @@ const features = [
     border: "border-red-500",
     shadow: "shadow-red-400/50",
     bgCircle: "bg-red-100",
+    ring: "ring-red-300",
   },
 ];
 
-// Reusable card animation
 const cardVariants = {
-  initial: { opacity: 0, y: 20 },
-  animate: { opacity: 1, y: 0 },
+  initial: { opacity: 0, y: 30 },
+  animate: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.5, ease: "easeOut" },
+  },
   whileHover: { scale: 1.05 },
 };
 
@@ -58,12 +65,18 @@ const FeatureCard = () => {
           key={index}
           variants={cardVariants}
           whileHover="whileHover"
-          className={`bg-gradient-to-br from-white/40 to-white/20 backdrop-blur-md border-2 ${feature.border} p-6 rounded-2xl text-center shadow-md hover:shadow-xl transition-all duration-300 ease-in-out ${feature.shadow}`}
+          whileTap={{ scale: 0.96 }}
+          transition={{ type: "spring", stiffness: 300 }}
+          className={`bg-gradient-to-br from-white/40 to-white/20 backdrop-blur-md border-2 ${feature.border} p-6 rounded-2xl text-center shadow-md transition-all duration-300 ease-in-out ${feature.shadow} active:ring-4 active:ring-offset-2 active:${feature.ring}`}
         >
-          <div className={`w-14 h-14 mx-auto mb-4 rounded-full flex items-center justify-center ${feature.bgCircle}`}>
+          <div
+            className={`w-14 h-14 mx-auto mb-4 rounded-full flex items-center justify-center ${feature.bgCircle}`}
+          >
             {feature.icon}
           </div>
-          <h3 className="font-semibold text-lg text-gray-800 mb-1">{feature.title}</h3>
+          <h3 className="font-semibold text-lg text-gray-800 mb-1">
+            {feature.title}
+          </h3>
           <p className="text-sm text-gray-700">{feature.description}</p>
         </motion.div>
       ))}
