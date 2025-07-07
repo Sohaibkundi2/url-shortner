@@ -8,36 +8,36 @@ const features = [
     title: "Blazing-fast URLs",
     description: "Shorten links instantly with top-tier performance.",
     border: "border-blue-600",
-    shadow: "shadow-blue-400/50",
+    shadow: "0 2px 8px rgba(59, 130, 246, 0.5)", // base
+    glow: "8px 8px 15px rgba(59, 130, 246, 0.5)", // on tap
     bgCircle: "bg-blue-100",
-    ring: "ring-blue-300",
   },
   {
     icon: <FaChartLine className="text-green-600 text-xl" />,
     title: "Click Analytics",
     description: "Track every click with live stats and insights.",
     border: "border-green-600",
-    shadow: "shadow-green-400/50",
+    shadow: "0 2px 8px rgba(34, 197, 94, 0.5)",
+    glow: "8px 8px 15px rgba(34, 197, 94, 0.5)",
     bgCircle: "bg-green-100",
-    ring: "ring-green-300",
   },
   {
     icon: <FaShieldAlt className="text-purple-600 text-xl" />,
     title: "Privacy-Focused",
     description: "We don't track you or show ads — ever.",
     border: "border-purple-600",
-    shadow: "shadow-purple-400/50",
+    shadow: "0 2px 8px rgba(147, 51, 234, 0.5)",
+    glow: "8px 8px 15px rgba(147, 51, 234, 0.5)",
     bgCircle: "bg-purple-100",
-    ring: "ring-purple-300",
   },
   {
     icon: <FaRocket className="text-red-500 text-xl" />,
     title: "Custom URLs",
     description: "Create personalized and branded short links easily.",
     border: "border-red-500",
-    shadow: "shadow-red-400/50",
+    shadow: "0 2px 8px rgba(239, 68, 68, .5)",
+    glow: "8px 8px 15px rgba(239, 68, 68, 0.5)",
     bgCircle: "bg-red-100",
-    ring: "ring-red-300",
   },
 ];
 
@@ -65,9 +65,13 @@ const FeatureCard = () => {
           key={index}
           variants={cardVariants}
           whileHover="whileHover"
-          whileTap={{ scale: 0.96 }}
+          whileTap={{
+            scale: 0.96,
+            boxShadow: feature.glow,
+          }}
+          style={{ boxShadow: feature.shadow }}
           transition={{ type: "spring", stiffness: 300 }}
-          className={`bg-gradient-to-br from-white/40 to-white/20 backdrop-blur-md border-2 ${feature.border} p-6 rounded-2xl text-center shadow-md transition-all duration-300 ease-in-out ${feature.shadow} active:ring-4 active:ring-offset-2 active:${feature.ring}`}
+          className={`bg-gradient-to-br from-white/40 to-white/20 backdrop-blur-md border-2 ${feature.border} p-6 rounded-2xl text-center transition-all duration-300 ease-in-out`}
         >
           <div
             className={`w-14 h-14 mx-auto mb-4 rounded-full flex items-center justify-center ${feature.bgCircle}`}
