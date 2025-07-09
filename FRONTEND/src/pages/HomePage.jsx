@@ -3,6 +3,7 @@ import UrlForm from "../compunents/UrlForm";
 import { motion } from "framer-motion";
 import AboutHeader from "../compunents/AboutHeader";
 import FeatureCard from "../compunents/FeatureCard";
+import Footer from "../compunents/Footer";
 import { Link } from "@tanstack/react-router";
 import { useSelector } from "react-redux";
 import { FaRocket } from "react-icons/fa6";
@@ -54,6 +55,7 @@ const HomePage = () => {
       )}
 
       <FeatureCard />
+      <Footer/>
     </div>
   );
 };

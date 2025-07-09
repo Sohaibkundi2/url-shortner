@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import AboutHeader from "./AboutHeader.jsx";
 import FeatureCard from "./FeatureCard.jsx";
+import Footer from "./Footer.jsx";
 import { FaRocket, FaChevronDown, FaChevronUp } from "react-icons/fa";
 import { Link } from "@tanstack/react-router";
 
@@ -126,9 +127,7 @@ const About = () => {
       </section>
 
       {/* Footer */}
-      <footer className="w-full text-center text-sm text-gray-500 border-t border-gray-200 py-6 mt-auto">
-        <p>© {new Date().getFullYear()} Shrtit — Built with care by Sohaib Kundi</p>
-      </footer>
+            <Footer/>
     </div>
   );
 };
