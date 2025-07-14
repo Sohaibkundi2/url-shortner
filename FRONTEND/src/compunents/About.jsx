@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import AboutHeader from "./AboutHeader.jsx";
 import FeatureCard from "./FeatureCard.jsx";
-import Footer from "./Footer.jsx";
 import { FaRocket, FaChevronDown, FaChevronUp } from "react-icons/fa";
 import { Link } from "@tanstack/react-router";
 
@@ -125,9 +124,6 @@ const About = () => {
           </div>
         </motion.div>
       </section>
-
-      {/* Footer */}
-            <Footer/>
     </div>
   );
 };

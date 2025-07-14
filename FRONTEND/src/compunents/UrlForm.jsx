@@ -36,7 +36,6 @@ const UrlForm = () => {
 
 
   });
-  console.log(mutation);
 
   const handleCopy = () => {
     navigator.clipboard.writeText(shortUrl);
