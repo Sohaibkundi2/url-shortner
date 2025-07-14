@@ -1,8 +1,8 @@
 # URL Shortener
 
-![Version](https://img.shields.io/badge/version-1.1.0-blue?style=flat-square)
+![Version](https://img.shields.io/badge/version-1.2.0-blue?style=flat-square)
 
-A modern full-stack URL shortener built with **React** and **Node.js/Express**. Users can create custom short URLs, track visits, and manage their links in a clean UI.
+A modern full-stack URL shortener built with **React** and **Node.js/Express**. Users can create short links, customize slugs, track visits, and manage their links in a user-friendly dashboard.
 
 ---
 
@@ -11,16 +11,19 @@ A modern full-stack URL shortener built with **React** and **Node.js/Express**. 
 - Frontend: [https://shrtit.tech](https://shrtit.tech)
 - Backend/API: [https://api.shrtit.tech](https://api.shrtit.tech)
 
+> Note: The backend was originally deployed on Railway, but has since been migrated to Render for better domain and SSL support.
+
 ---
 
 ## Features
 
 - Shorten URLs with optional custom slugs
-- User dashboard to manage links
-- Click tracking with live stats
+- User authentication with login and registration
+- Personal dashboard to manage and track links
+- Real-time click tracking with statistics
 - One-click copy to clipboard
-- Smooth UI animations with Framer Motion
-- Data fetching and syncing using TanStack React Query
+- Smooth transitions with Framer Motion
+- Data synchronization via TanStack React Query
 
 ---
 
@@ -28,61 +31,84 @@ A modern full-stack URL shortener built with **React** and **Node.js/Express**. 
 
 - **Frontend**: React, Tailwind CSS, Framer Motion, React Query
 - **Backend**: Node.js, Express, MongoDB
-- **API**: RESTful with cookie-based authentication
-- **Deployment**: Vercel (Frontend), Railway (Backend)
+- **Authentication**: JWT (HttpOnly cookies)
+- **Deployment**: Vercel (Frontend), Render (Backend)
 
 ---
 
-## Getting Started (Locally)
+## Getting Started (Local Setup)
 
 ### Prerequisites
 
 - Node.js and npm
-- MongoDB (local or MongoDB Atlas)
+- MongoDB (local or [MongoDB Atlas](https://www.mongodb.com/cloud/atlas))
 
-### 1. Clone Repository
-
+### 1. Clone the Repository
 
 ```bash
 git clone https://github.com/sohaibkundi2/url-shortener.git
 cd url-shortener
 ```
 
-## 2. Backend Setup
-```
+### 2. Backend Setup
+
+```bash
 cd backend
 npm install
 ```
-- Create a .env file:
-```
+
+Create a `.env` file in the `backend` folder:
+
+```env
 PORT=3000
-MONGODB_URI=your_mongo_connection
-JWT_SECRET=your_secret
-CLIENT_URL=http://localhost:3000
+MONGODB_URI=your_mongodb_connection_string
+JWT_SECRET=your_secret_key
+CLIENT_URL=http://localhost:5173
 ```
-```
+
+Start the backend server:
+
+```bash
 npm run dev
 ```
-- The backend runs at http://localhost:3000
 
-## 3. Frontend Setup
-```
+The backend will run on: `http://localhost:3000`
+
+### 3. Frontend Setup
+
+```bash
 cd ../frontend
 npm install
 npm run dev
 ```
-- The frontend runs at http://localhost:5173
+- #### Also change 
+```
+// in UrlForm.jsx
+
+const BASE_URL = "api.shrtit.tech";
+to 
+const BASE_URL = http://localhost:3000
+
+// And UserUrl.jsx
+
+const BASE_URL = "https://shrtit.tech/";
+to
+const BASE_URL = "http://localhost:3000";
+```
+
+The frontend will run on: `http://localhost:5173`
+
 ---
 
-#  Usage
-- Visit your deployed site shrtit.tech
+## Usage
 
-- Log in or sign up to create custom links
+- Go to [shrtit.tech](https://shrtit.tech)
+- Register or log in to your account
+- Create short URLs with optional custom aliases
+- Share links and monitor visit stats on your dashboard
+- All data syncs automatically using React Query
 
-- Copy and share the generated short URLs
-
-- Dashboard auto-updates click counts using React Query
-
+---
 
 ## Project Structure
 
@@ -101,13 +127,13 @@ url-shortener/
 │   └── vite.config.js
 ├── README.md
 └── .gitignore
-
 ```
 
 ---
-#  Vercel Configuration
 
-Vercel handles client-side routing by using this config in vercel.json (already included if deployed correctly):
+## Vercel Configuration
+
+To enable client-side routing with React on Vercel, the following is included in `vercel.json`:
 
 ```json
 {
@@ -116,30 +142,38 @@ Vercel handles client-side routing by using this config in vercel.json (already 
   ]
 }
 ```
-- This ensures routes like /auth or /dashboard don’t give a 404 on refresh.
+
+This ensures routes like `/auth` or `/dashboard` do not return 404 on refresh.
 
 ---
-##  Authentication
-- Login/signup system with JWT (stored in HttpOnly cookies)
 
-- Protected routes handled on frontend and backend
+## Authentication
 
-##  License
+- JWT-based authentication
+- Tokens are stored in secure HttpOnly cookies
+- Protected routes implemented on both frontend and backend
 
-- This project is for educational and demonstration purposes only.
 ---
 
-##  Credits
+## License
+
+This project is intended for educational and demonstration purposes only.
+
+---
+
+## Credits
 
 - [React](https://react.dev/)
 - [Express](https://expressjs.com/)
 - [MongoDB](https://www.mongodb.com/)
 - [Framer Motion](https://www.framer.com/motion/)
 - [TanStack Query](https://tanstack.com/query/latest)
+
 ---
 
+## Author
 
-##  Author
 ```
-Made with 💻 by Sohaib Kundi.
+Made by Sohaib Kundi
+Full-Stack Developer | Web Engineer  
 ```
