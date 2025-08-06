@@ -109,6 +109,14 @@ The frontend will run on: `http://localhost:5173`
 - All data syncs automatically using React Query
 
 ---
+ ## Screenshots
+- 🔹 Dashboard
+- 🔹 About Page
+<p align="center">
+  <img src="image.png" alt="Dashboard" width="51%" />
+  &nbsp;
+  <img src="image-1.png" alt="About Page" width="40%" />
+</p>
 
 ## Project Structure
 
@@ -126,6 +134,8 @@ url-shortener/
 │   └── index.html
 │   └── vite.config.js
 ├── README.md
+├── CONTRIBUTING.md
+├── CODE_OF_CONDUCT.md
 └── .gitignore
 ```
 
@@ -154,6 +164,11 @@ This ensures routes like `/auth` or `/dashboard` do not return 404 on refresh.
 - Protected routes implemented on both frontend and backend
 
 ---
+## 💖 Support This Project
+If you find this project helpful or interesting, please consider supporting it:
+
+- [Github Sponsors](https://github.com/sponsors/Sohaibkundi2)
+- [Open Collective](https://opencollective.com/shrtittech)
 
 ## License
 
