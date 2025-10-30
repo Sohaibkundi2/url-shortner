@@ -2,6 +2,7 @@ import React from 'react';
 import { useQuery } from '@tanstack/react-query';
 import { getAllUserUrls } from '../api/user.api';
 import { motion } from 'framer-motion';
+import { toast } from "react-hot-toast";
 
 const UserUrl = () => {
 const BASE_URL = "https://shrtit.tech/";
@@ -17,6 +18,7 @@ const BASE_URL = "https://shrtit.tech/";
     navigator.clipboard.writeText(shortUrl);
     setCopiedIdx(idx);
     setTimeout(() => setCopiedIdx(null), 1500);
+    toast.success("Short URL copied to clipboard!");
   };
 
   if (isLoading) return <div className="text-center py-8 text-gray-500">Loading URLs...</div>;

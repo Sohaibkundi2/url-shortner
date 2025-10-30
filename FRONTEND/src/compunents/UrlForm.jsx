@@ -3,6 +3,7 @@ import { useQueryClient } from "@tanstack/react-query";
 import { useSelector } from "react-redux";
 import { createShortUrl } from "../api/createShortUrl";
 import { motion, AnimatePresence } from "framer-motion";
+import { toast } from "react-hot-toast";
 
 const BASE_URL = "https://api.shrtit.tech/";
 
@@ -21,6 +22,7 @@ const UrlForm = () => {
     navigator.clipboard.writeText(shortUrl);
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
+    toast.success("Short URL copied to clipboard!");
   };
 
   const submitHandler = async (e) => {
@@ -39,8 +41,10 @@ const UrlForm = () => {
       setUrlVal("");
       setSlug("");
       queryClient.invalidateQueries({ queryKey: ["userUrls"] }); // refresh URLs list
+      toast.success("Short URL created successfully!");
     } catch (err) {
       setErrorMsg(err.message || "Something went wrong!");
+      toast.error(err.message || "Something went wrong!");
     } finally {
       setIsLoading(false); 
     }
