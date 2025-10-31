@@ -5,6 +5,8 @@ import { logout } from '../store/slices/authSlice';
 import { logoutApi } from '../api/user.api'; 
 import { useRouter } from '@tanstack/react-router';
 import { toast } from "react-hot-toast";
+import { confirmAlert } from 'react-confirm-alert';
+import 'react-confirm-alert/src/react-confirm-alert.css';
  
 const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -14,10 +16,27 @@ const Navbar = () => {
 const router = useRouter();
 
 const handleLogout = async () => {
-  await logoutApi();       
-  dispatch(logout());       
-  router.navigate({ to: '/auth' });
-  toast.success("Logout successful!");
+  confirmAlert({
+    title: 'Confirm Logout',
+    message: 'Are you sure you want to logout?',
+    buttons: [
+      {
+        label: 'Yes',
+        onClick: async () => {
+          await logoutApi();
+          dispatch(logout());
+          router.navigate({ to: '/auth' });
+          toast.success("Logout successful!");
+        }
+      },
+      {
+        label: 'No',
+        onClick: () => {
+          toast.error("Logout cancelled.");
+        }
+      }
+    ]
+  });
 };
 
   const toggleMobileMenu = () => {
