@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { logout } from '../store/slices/authSlice';
 import { logoutApi } from '../api/user.api'; 
 import { useRouter } from '@tanstack/react-router';
+import { toast } from "react-hot-toast";
  
 const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -16,6 +17,7 @@ const handleLogout = async () => {
   await logoutApi();       
   dispatch(logout());       
   router.navigate({ to: '/auth' });
+  toast.success("Logout successful!");
 };
 
   const toggleMobileMenu = () => {
