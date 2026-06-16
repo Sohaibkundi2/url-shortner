@@ -16,7 +16,7 @@ const PORT = process.env.PORT || 5000;
 
 const app = express()
 app.use(cors({
-    origin: ['http://localhost:5173', 'https://shrtit.tech', 'https://www.shrtit.tech','https://url-shortner-production-2288.up.railway.app'],
+    origin: ['http://localhost:5173', 'https://shrtit.tech', 'https://www.shrtit.tech','https://urlchanged.vercel.app'],
     credentials: true
 }));
 
