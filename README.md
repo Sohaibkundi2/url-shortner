@@ -8,56 +8,80 @@ A modern full-stack URL shortener built with **React** and **Node.js/Express**. 
 
 ## Live Demo
 
-- Frontend: [https://shrtit.tech](https://shrtit.tech)
-- Backend/API: [https://api.shrtit.tech](https://api.shrtit.tech)
+* Current Frontend: https://urlchanged.vercel.app
+* Current Backend/API: https://url-shortner-eoyu.onrender.com
 
-> Note: The backend was originally deployed on Railway, but has since been migrated to Render for better domain and SSL support.
+> Previously deployed on the custom domain **shrtit.tech** with the API hosted at **api.shrtit.tech**. The project has since been migrated to its current Vercel and Render deployment infrastructure.
+
 
 ---
 
 ## Features
 
-- Shorten URLs with optional custom slugs
-- User authentication with login and registration
-- Personal dashboard to manage and track links
-- Real-time click tracking with statistics
-- One-click copy to clipboard
-- Smooth transitions with Framer Motion
-- Data synchronization via TanStack React Query
+* Shorten URLs with optional custom slugs
+* User authentication with login and registration
+* Custom aliases for authenticated users
+* Personal dashboard to manage links
+* Visit tracking and analytics
+* One-click copy to clipboard
+* Responsive UI with modern design
+* Smooth animations using Framer Motion
+* Data synchronization with TanStack React Query
 
 ---
 
 ## Tech Stack
 
-- **Frontend**: React, Tailwind CSS, Framer Motion, React Query
-- **Backend**: Node.js, Express, MongoDB
-- **Authentication**: JWT (HttpOnly cookies)
-- **Deployment**: Vercel (Frontend), Render (Backend)
+### Frontend
+
+* React
+* Tailwind CSS
+* Framer Motion
+* TanStack React Query
+* Redux Toolkit
+
+### Backend
+
+* Node.js
+* Express.js
+* MongoDB
+* Mongoose
+
+### Authentication
+
+* JWT Authentication
+* HttpOnly Cookies
+
+### Deployment
+
+* Frontend: Vercel
+* Backend: Render
 
 ---
 
-## Getting Started (Local Setup)
+## Getting Started
 
 ### Prerequisites
 
-- Node.js and npm
-- MongoDB (local or [MongoDB Atlas](https://www.mongodb.com/cloud/atlas))
+* Node.js
+* npm
+* MongoDB Atlas or Local MongoDB
 
-### 1. Clone the Repository
+### Clone Repository
 
 ```bash
-git clone https://github.com/sohaibkundi2/url-shortener.git
-cd url-shortener
+git clone https://github.com/Sohaibkundi2/url-shortner.git
+cd url-shortner
 ```
 
-### 2. Backend Setup
+### Backend Setup
 
 ```bash
-cd backend
+cd BACKEND
 npm install
 ```
 
-Create a `.env` file in the `backend` folder:
+Create a `.env` file:
 
 ```env
 PORT=3000
@@ -66,73 +90,89 @@ JWT_SECRET=your_secret_key
 CLIENT_URL=http://localhost:5173
 ```
 
-Start the backend server:
+Run backend:
 
 ```bash
 npm run dev
 ```
 
-The backend will run on: `http://localhost:3000`
+Backend runs at:
 
-### 3. Frontend Setup
+```text
+http://localhost:3000
+```
+
+### Frontend Setup
 
 ```bash
-cd ../frontend
+cd FRONTEND
 npm install
 npm run dev
 ```
-- #### Also change 
+
+Create  `.env` frontend and backend:
+
+```env
+frontend:
+VITE_API_BASE_URL=http://localhost:3000/
 ```
-// in UrlForm.jsx
-
-const BASE_URL = "api.shrtit.tech";
-to 
-const BASE_URL = http://localhost:3000
-
-// And UserUrl.jsx
-
-const BASE_URL = "https://shrtit.tech/";
-to
-const BASE_URL = "http://localhost:3000";
+```env
+backend:
+PORT = 3000
+MONGO_URI = ...
+APP_URL = http://localhost:3000/
+JWT_SECRET = ...
 ```
 
-The frontend will run on: `http://localhost:5173`
+Frontend runs at:
+
+```text
+http://localhost:5173
+```
 
 ---
 
 ## Usage
 
-- Go to [shrtit.tech](https://shrtit.tech)
-- Register or log in to your account
-- Create short URLs with optional custom aliases
-- Share links and monitor visit stats on your dashboard
-- All data syncs automatically using React Query
+1. Open the application.
+2. Register or log in.
+3. Enter a long URL.
+4. Optionally create a custom slug.
+5. Generate and share your shortened URL.
+6. Track link activity from your dashboard.
 
 ---
- ## Screenshots
-- 🔹 Dashboard
-- 🔹 About Page
+
+## Screenshots
+
+### Dashboard & About Page
+
 <p align="center">
   <img src="image.png" alt="Dashboard" width="51%" />
   &nbsp;
   <img src="image-1.png" alt="About Page" width="40%" />
 </p>
 
+---
+
 ## Project Structure
 
-```
-url-shortener/
-├── backend/
+```text
+url-shortner/
+├── BACKEND/
 │   ├── controllers/
 │   ├── models/
+│   ├── routes/
 │   └── app.js
-├── frontend/
+│
+├── FRONTEND/
 │   ├── src/
 │   │   ├── api/
 │   │   ├── components/
+│   │   ├── pages/
 │   │   └── App.jsx
-│   └── index.html
 │   └── vite.config.js
+│
 ├── README.md
 ├── CONTRIBUTING.md
 ├── CODE_OF_CONDUCT.md
@@ -143,52 +183,45 @@ url-shortener/
 
 ## Vercel Configuration
 
-To enable client-side routing with React on Vercel, the following is included in `vercel.json`:
+The project uses rewrites to support:
 
-```json
-{
-  "rewrites": [
-    { "source": "/(.*)", "destination": "/" }
-  ]
-}
-```
+* React client-side routing
+* URL slug redirection
+* API proxying
 
-This ensures routes like `/auth` or `/dashboard` do not return 404 on refresh.
+
 
 ---
 
 ## Authentication
 
-- JWT-based authentication
-- Tokens are stored in secure HttpOnly cookies
-- Protected routes implemented on both frontend and backend
+* JWT-based authentication
+* Secure HttpOnly cookies
+* Protected frontend and backend routes
+* Persistent login sessions
 
 ---
-## 💖 Support This Project
-If you find this project helpful or interesting, please consider supporting it:
-
-- [Github Sponsors](https://github.com/sponsors/Sohaibkundi2)
-- [Open Collective](https://opencollective.com/shrtittech)
 
 ## License
 
-This project is intended for educational and demonstration purposes only.
+This project is intended for educational and portfolio purposes.
 
 ---
 
 ## Credits
 
-- [React](https://react.dev/)
-- [Express](https://expressjs.com/)
-- [MongoDB](https://www.mongodb.com/)
-- [Framer Motion](https://www.framer.com/motion/)
-- [TanStack Query](https://tanstack.com/query/latest)
+* React
+* Express.js
+* MongoDB
+* Framer Motion
+* TanStack Query
 
 ---
 
 ## Author
 
-```
-Made by Sohaib Kundi
-Full-Stack Developer | Web Engineer  
-```
+**Sohaib Kundi**
+
+Full-Stack Developer | Web Engineer
+
+GitHub: https://github.com/Sohaibkundi2

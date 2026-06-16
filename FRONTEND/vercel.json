@@ -6,17 +6,11 @@
     },
     {
       "source": "/api/(.*)",
-      "destination": "https://api.shrtit.tech/api/$1"
+      "destination": "https://url-shortner-eoyu.onrender.com/api/$1"
     },
     {
       "source": "/:slug",
-      "has": [
-        {
-          "type": "host",
-          "value": "shrtit.tech"
-        }
-      ],
-      "destination": "https://api.shrtit.tech/:slug"
+      "destination": "https://url-shortner-eoyu.onrender.com/:slug"
     },
     {
       "source": "/(.*)",
