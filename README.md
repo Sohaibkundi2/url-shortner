@@ -61,7 +61,7 @@ Create a `.env` file in the `backend` folder:
 
 ```env
 PORT=3000
-MONGODB_URI=your_mongodb_connection_string
+MONGO_URI=your_mongodb_connection_string
 JWT_SECRET=your_secret_key
 CLIENT_URL=http://localhost:5173
 ```

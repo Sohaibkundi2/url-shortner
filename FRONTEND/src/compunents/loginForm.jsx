@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { useNavigate } from '@tanstack/react-router'
 import { login as loginAction } from '../store/slices/authSlice'
 import { motion } from 'framer-motion'
+import { toast } from "react-hot-toast";
 
 const LoginForm = ({ state }) => {
   const [email, setEmail] = useState('')
@@ -29,8 +30,10 @@ const LoginForm = ({ state }) => {
       navigate({ to: '/dashboard' })
       setEmail('')
       setPassword('')
+      toast.success("Login successful!")
     } catch (err) {
       setError(err.message || 'Login failed. Please try again.')
+      toast.error(err.message || 'Login failed. Please try again.')
     } finally {
       setLoading(false)
     }
