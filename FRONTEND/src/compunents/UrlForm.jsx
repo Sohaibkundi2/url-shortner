@@ -5,7 +5,7 @@ import { createShortUrl } from "../api/createShortUrl";
 import { motion, AnimatePresence } from "framer-motion";
 import { toast } from "react-hot-toast";
 
-const BASE_URL = "https://api.shrtit.tech/";
+const BASE_URL = import.meta.env.VITE_BASE_URL || "http://localhost:3000/";
 
 const UrlForm = () => {
   const [urlVal, setUrlVal] = useState("");
